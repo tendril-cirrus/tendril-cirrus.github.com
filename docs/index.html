@@ -21,6 +21,9 @@
     </style>
     <link href="../bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="../more.css">
+    
+    <link href="../google-code-prettify/prettify.css" type="text/css" rel="stylesheet" />
+	
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -34,7 +37,7 @@
     <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
   </head>
 
-  <body>
+  <body onload="prettyPrint()">
 
     
     <div class="navbar navbar-fixed-top">
@@ -45,11 +48,12 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <a class="brand" href="#">Tendril-Cirrus</a>
+          <a class="brand" href="../">Tendril-Cirrus</a>
           <div class="nav-collapse">
             <ul class="nav">
               <li><a href="../">Home</a></li>
               <li class="active"><a href="/docs">Docs</a></li>
+              <li><a href="/demos">Demos</a></li>
               <li><a href="/about">About</a></li>
             </ul>
             <p class="navbar-text pull-right">Fork me on <a href="https://github.com/tendril-cirrus/4308Cirrus">Github</a></p>
@@ -58,48 +62,97 @@
       </div>
     </div>
 
-    <div class="container">
+    <div class="container-fluid">
 
+      <!-- Sidebar -->
+      <div class="row-fluid">
+        <div class="span3">
+          <div class="well sidebar-nav">
+            <ul class="nav nav-list">
+              <li class="nav-header">Sidebar</li>
+              <li><a href="#usage">Usage</a></li>
+              <li><a href="#tutorial">Tutorial</a></li>
+              <li><a href="#">Link</a></li>
+              <li class="nav-header">Sidebar</li>
+              <li><a href="#">Link</a></li>
+              <li><a href="#">Link</a></li>
+              <li class="nav-header">Sidebar</li>
+              <li><a href="#">Link</a></li>
+              <li><a href="#">Link</a></li>
+              <li><a href="#">Link</a></li>
+            </ul>
+          </div>
+        </div>
+      
+
+	<div class="span9">
       <!-- About Header -->
-      <div class="row">
+      
         <div class="span9">
           <h1>Documentation</h1>
-          <p>This is a semi-complete and powerful Android Library for creating Android Applications that utilize the Tendril Connect API.</p>
+          <p>Want to develop Android Applications using the Tendril Connect API? Check out the documentation, browse the source code on Github, and read our tutorials here.</p>
         </div>
-      </div>
+      
 
-      <!-- Example row of columns -->
-      <div class="row">
-        <div class="span4">
-          <h2>Usage</h2>
-           <p>Simply integrate data from Tendril's API using the Cirrus Library.  Just add a maven dependency, or reference our project from eclipse.</p>
-          <p><a class="btn" href="#">Usage &raquo;</a></p>
-        </div>
-        <div class="span4">
-          <h2>Full Documentation</h2>
-           <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn" href="#">View details &raquo;</a></p>
-       </div>
-        <div class="span4">
-          <h2>About the Project</h2>
-          <p>This project was </p>
-          <p><a class="btn" href="#">View details &raquo;</a></p>
-        </div>
+        <!-- Example row of columns -->
+       
+          <div class="span4">
+            <h2>Usage</h2>
+             <p>Simply integrate data from Tendril's API in to your Android Applications using the Cirrus Library.  Just add a maven dependency, or reference our project from eclipse.</p>
+            <p><a class="btn btn-large" href="#">Usage &raquo;</a></p>
+          </div>
+          <div class="span4">
+            <h2>Full Documentation</h2>
+             <p>Want more detailed information on the library? Full JavaDoc files are available.   </p>
+            <p><a class="btn-large btn-primary" href="../apidocs">View JavaDocs &raquo;</a></p>
+         </div>
+              
+      
+      <div id="">
+      	<div class="span9" id="usage">
+      		<h1>Usage</h1>
+      		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras laoreet mi vel quam ornare semper. Suspendisse tincidunt dignissim nunc a condimentum. Duis gravida blandit metus, et pretium sem dictum vel. Nulla quis libero id leo fermentum volutpat. Nunc sed lectus eget dolor vehicula laoreet sed nec ipsum. Vestibulum eu enim lorem, sit amet lobortis urna. Curabitur euismod tempor fermentum. Maecenas at ligula non lectus faucibus volutpat.
+      		</p>
+      		<h5>Some Sample Code:</h5>
+      		<pre class="prettyprint lang-java">TextView username = (TextView) findViewById(R.id.user_profile_username);
+username.setText(user.getUserName().toString());
+			
+TextView nameFirstLast = (TextView) findViewById(R.id.user_profile_name);
+nameFirstLast.setText(user.getFirstName()+ " " +user.getLastName());
+			
+TextView userEmail = (TextView) findViewById(R.id.user_profile_email);
+userEmail.setText(user.getEmailAddress());</pre>
+           
+      		
+      	</div>
       </div>
-
+      
+      <div id="">
+      	<div class="span9" id="tutorial">
+      		<h1>Tutorial</h1>
+      		<p>Mauris quis dui at magna iaculis sollicitudin eu aliquam ante. Donec eget sem non elit vehicula viverra. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla elit magna, ornare vitae elementum vel, pellentesque eu velit. Fusce auctor ante nec felis tempor eget fermentum nulla elementum. Ut dictum sagittis aliquet. Aliquam eget nunc in nunc tempus vulputate.</p>
+      		<p>Some Sample Code:</p>
+      		<pre class="prettyprint lang-java">setHomeLocPref = (Preference) findPreference("setHomeLocPref");
+gpsFreqPref = (Preference) findPreference("gpsFrequency");
+smartHeatPref = (Preference) findPreference("smartHeat");</pre>
+      		
+      	</div>
+      </div>
+	</div>
       <hr>
 
       <footer>
         <p>&copy; Team Cirrus</p>
       </footer>
 
-    </div><!--/.fluid-container-->
+    </div>
 
     <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="http://code.jquery.com/jquery-1.7.min.js"></script>
     <script src="../bootstrap/js/bootstrap.min.js"></script>
+    <script src="../google-code-prettify/prettify.js"></script>
 
 
   </body>

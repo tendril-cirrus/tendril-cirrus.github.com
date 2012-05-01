@@ -21,20 +21,3 @@ img {
 }
 
 
-a {		/* unvisited link */
-	color: #8DC63F;
-	text-decoration: none;
-}      
-
-a:visited {		/* visited link */
-	color:#8DC63F;
-}  
-
-a:hover {		/* mouse over link */
-	color:#8DC63F;
-	
-}  
-
-a:active {		/* selected link */
-	color:#8DC63F;
-}  

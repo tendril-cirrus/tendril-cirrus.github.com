@@ -73,13 +73,12 @@
               <li><a href="#usage">Usage</a></li>
               <li><a href="#tutorial">Tutorial</a></li>
               <li><a href="../apidocs">JavaDocs</a></li>
-              <li class="nav-header">Sidebar</li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li class="nav-header">Sidebar</li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
+              <li class="nav-header">Example Apps</li>
+              <li><a href="https://github.com/tendril-cirrus/4308Cirrus/tree/master/tendril-example">Tendril-Example on GitHub</a></li>
+              <li><a href="https://github.com/tendril-cirrus/4308Cirrus/tree/master/tendril-cirrus">Tendril-Cirrus on GitHub</a></li>
+              <li class="nav-header">Tendril</li>
+              <li><a href="http://dev.tendrilinc.com/docs/how_it_works">Tendril Developer Documentation</a></li>
+            
             </ul>
           </div>
         </div>
@@ -97,33 +96,63 @@
         <!-- Example row of columns -->
        
           <div class="span4">
-            <h2>Usage</h2>
-             <p>Simply integrate data from Tendril's API in to your Android Applications using the Cirrus Library.  Just add a maven dependency, or reference our project from eclipse.</p>
-            <p><a class="btn btn-large" href="#">Usage &raquo;</a></p>
-          </div>
-          <div class="span4">
             <h2>Full Documentation</h2>
              <p>Want more detailed information on the library? Full JavaDoc files are available.   </p>
             <p><a class="btn btn-large btn-primary" href="../apidocs">View JavaDocs &raquo;</a></p>
          </div>
+         <div class="span4">
+            <h2>Usage</h2>
+             <p>Simply integrate data from Tendril's API in to your Android Applications using the Cirrus Library.  Just add a maven dependency, or reference our project from eclipse.</p>
+            <p><a class="btn btn-large" href="#usage">Usage &raquo;</a></p>
+          </div>
+
               
       
       <div id="">
       	<div class="span9" id="usage">
       		<h1>Usage</h1>
       		
-      		<h2>Maven Integration</h2>
-      		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras laoreet mi vel quam ornare semper. Suspendisse tincidunt dignissim nunc a condimentum. Duis gravida blandit metus, et pretium sem dictum vel. Nulla quis libero id leo fermentum volutpat. Nunc sed lectus eget dolor vehicula laoreet sed nec ipsum. Vestibulum eu enim lorem, sit amet lobortis urna. Curabitur euismod tempor fermentum. Maecenas at ligula non lectus faucibus volutpat.
+      		<h4>First, you will want to go grab the library from github</h4>
+      		<p>
+      		<pre class="prettyprint">git clone git@github.com:tendril-cirrus/4308Cirrus.git</pre>
       		</p>
-      		<h5>Some Sample Code:</h5>
-      		<pre class="prettyprint lang-java">TextView username = (TextView) findViewById(R.id.user_profile_username);
-username.setText(user.getUserName().toString());
-			
-TextView nameFirstLast = (TextView) findViewById(R.id.user_profile_name);
-nameFirstLast.setText(user.getFirstName()+ " " +user.getLastName());
-			
-TextView userEmail = (TextView) findViewById(R.id.user_profile_email);
-userEmail.setText(user.getEmailAddress());</pre>
+      		<p>The library contains four Primary Directories:
+      			<ol>
+      				<li><strong>tendril-domain</strong></li>
+      				<li><strong>tendril-android-lib</strong></li>
+      				<li><strong>tendril-example</strong></li>
+      				<li><strong>tendril-cirrus</strong></li>
+      			</ol>
+      			Tendril Domain contains all of the domain models for objects returned from the API. <br>
+      			Tendril Android Lib is the core interface for making calls to the Tendril Connect API inside an android application.<br>
+      			Tendril Example is a bare bones Android Application that demonstrates how to make each and every call to the Tendril Connect API.<br>
+      			Tendril Cirrus is a more advanced example Android App that uses some geolocation features alongside the Tendril API. 
+      		</p>
+      		
+      		<h3>Maven Integration</h3>
+      		<p>
+      			To use our library with your Maven Project, simply add the 4308-Cirrus project to your Maven Dependencies. (Don't forget to build the tendril-cirrus project after downloading it)<br>
+      			<pre class="prettyprint">&lt;dependency&gt;
+	&lt;groupId&gt;edu.colorado.cs.cirrus&lt;/groupId&gt;
+	&lt;artifactId>tendril-android-lib&lt;/artifactId&gt;
+	&lt;version>0.0.1-SNAPSHOT&lt;/version&gt;
+	&lt;exclusions&gt;
+		&lt;exclusion&gt;
+			&lt;groupId&gt;org.hamcrest&lt;/groupId&gt;
+			&lt;artifactId>hamcrest-all&lt;/artifactId&gt;
+		&lt;/exclusion&gt;
+		&lt;exclusion&gt;
+			&lt;groupId&gt;com.google.android&lt;/groupId&gt;
+			&lt;artifactId>android&lt;/artifactId&gt;
+		&lt;/exclusion&gt;
+	&lt;/exclusions&gt;
+&lt;/dependency&gt;
+</pre>
+      		</p>
+      		<h3>Eclipse Integration</h3>
+      		<p>
+      			We have included the necessary jars in the project directory.  Simply add these to your project build path in Eclipse.
+      		</p>
            
       		
       	</div>
@@ -132,25 +161,37 @@ userEmail.setText(user.getEmailAddress());</pre>
       <div id="">
       	<div class="span9" id="tutorial">
       		<h1>Tutorial</h1>
-      		<p>Mauris quis dui at magna iaculis sollicitudin eu aliquam ante. Donec eget sem non elit vehicula viverra. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla elit magna, ornare vitae elementum vel, pellentesque eu velit. Fusce auctor ante nec felis tempor eget fermentum nulla elementum. Ut dictum sagittis aliquet. Aliquam eget nunc in nunc tempus vulputate.</p>
-      		<p>Some Sample Code:</p>
-      		<pre class="prettyprint lang-java">setHomeLocPref = (Preference) findPreference("setHomeLocPref");
-gpsFreqPref = (Preference) findPreference("gpsFrequency");
-smartHeatPref = (Preference) findPreference("smartHeat");</pre>
+      		<p>After setting up your project with Maven or Eclipse (see above), try creating a simple activity that extends AbstractAsyncActivity:</p>
+      		<pre class="prettyprint lang-java">public class CirrusActivity extends AbstractAsyncTendrilActivity</pre>
 
-			<p>Some More Sample Code:</p>
-      		<pre class="prettyprint lang-java">setHomeLocPref = (Preference) findPreference("setHomeLocPref");
-gpsFreqPref = (Preference) findPreference("gpsFrequency");
-smartHeatPref = (Preference) findPreference("smartHeat");</pre>
+			<p>Retrieve the tendril object:</p>
+      		<pre class="prettyprint lang-java">tendril = TendrilTemplate.get();</pre>
+      		
+      		<p>Get some data:</p>
+      		<pre class="prettyprint lang-java">user = tendril.fetchUser();
+devices = tendril.getDevices():</pre>
+      						
+			
 
       		
+      	</div>
+      </div>
+      
+      <div id="">
+      	<div class="span9" id="more">
+      		<h1>More Information</h1>
+      		<p>
+      		You may have noticed that we are using strange SherlockActivities and things that reference actionbarsherlock. This is an open source library for adding Native Action Bar support to android versions below 4.0.  Get more information about the library here: <a href="http://actionbarsherlock.com/">ActionBarSherlock</a>
+      		</p>
+      		<h4>Other Tips:</h4>
+      		<p>
+      			We highly recommend spending some time reading through all of the information on the <a href="http://dev.tendrilinc.com">Tendril Connect</a> website.  Your next best resource will be looking through our JavaDocs and through our example applications.
+      		</p>
       		
       		
       	</div>
-      	
-      	
-      	
-      </div>
+       </div>
+      
 	</div>
       <hr>
 
